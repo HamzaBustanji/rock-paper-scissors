@@ -12,7 +12,32 @@
         choice = Math.floor(Math.random() * 3);
         return choices[choice];
       }
-      console.log(getComputerChoice());
+      function playRound(computerSelection, playerSelection) {
+        computerSelection = computerSelection.toLowerCase();
+        playerSelection = playerSelection.toLowerCase();
+        // rock beats scissors
+        if (playerSelection === "rock" && computerSelection === "scissors") {
+          return "You have won! Rock beats Scissors.";
+        }
+        // scissors beat paper
+        if (playerSelection === "scissors" && computerSelection === "paper") {
+          return "You have won! Scissors beats Paper.";
+        }
+        // paper beats rock
+        if (playerSelection === "rock" && computerSelection === "scissors") {
+          return "You have won! Rock beats Scissors.";
+        }
+        if (playerSelection === computerSelection) {
+          return "Tie.";
+        } else {
+          return "You lose.";
+        }
+      }
+      const playerSelection = "scissors";
+      const computerSelection = getComputerChoice();
+      console.log(playerSelection);
+      console.log(computerSelection);
+      console.log(playRound(computerSelection, playerSelection));
     </script>
   </body>
 </html>
